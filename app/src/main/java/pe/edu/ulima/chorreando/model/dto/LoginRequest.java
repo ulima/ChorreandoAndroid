@@ -1,4 +1,4 @@
-package pe.edu.ulima.chorreando.dto;
+package pe.edu.ulima.chorreando.model.dto;
 
 /**
  * Created by hquintana on 12/09/15.

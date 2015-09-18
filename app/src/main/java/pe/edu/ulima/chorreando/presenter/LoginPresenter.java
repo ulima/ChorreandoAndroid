@@ -8,8 +8,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 
-import pe.edu.ulima.chorreando.dto.GenericResponse;
-import pe.edu.ulima.chorreando.dto.LoginRequest;
+import pe.edu.ulima.chorreando.model.dto.GenericResponse;
+import pe.edu.ulima.chorreando.model.dto.LoginRequest;
 import pe.edu.ulima.chorreando.views.LoginView;
 
 public class LoginPresenter implements ILoginPresenter{

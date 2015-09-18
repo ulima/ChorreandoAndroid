@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import pe.edu.ulima.chorreando.presenter.LoginPresenter;
+import pe.edu.ulima.chorreando.presenter.LoginRetrofitPresenter;
 import pe.edu.ulima.chorreando.views.LoginView;
 
 public class MainActivity extends Activity implements OnClickListener, LoginView{
@@ -39,7 +39,8 @@ public class MainActivity extends Activity implements OnClickListener, LoginView
             String username = eteUsername.getText().toString();
             String password = etePassword.getText().toString();
 
-            new LoginPresenter(this).login(username, password);
+            //new LoginPresenter(this).login(username, password);
+            new LoginRetrofitPresenter(this).login(username, password);
 
         }else if (view.getId() == R.id.butLoginFacebook){
             Log.i("MainActivity", "Se hizo click en el boton LoginFacebook");
