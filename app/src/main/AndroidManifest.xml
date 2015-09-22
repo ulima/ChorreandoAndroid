@@ -18,10 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".PerfilActivity"
-            android:label="@string/title_activity_perfil" >
-        </activity>
+        <activity android:name=".ContenedorActivity" />
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@ import pe.edu.ulima.chorreando.model.dto.LoginRequest;
 import pe.edu.ulima.chorreando.views.LoginView;
 
 public class LoginPresenter implements ILoginPresenter{
-    private static final String url = "http://192.168.0.14:8080/ChorreandoBackend/login";
+    private static final String url = "http://chorreando.herokuapp.com";
 
     private LoginView view;
 

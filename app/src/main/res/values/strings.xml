@@ -4,4 +4,14 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_perfil">Perfil</string>
+    <string name="title_activity_que_haciendo">¿Qué haciendo?</string>
+    <string name="title_activity_amigos">Amigos</string>
+    <string name="Pais">Peru</string>
+    <string name="Nombre">Persona 1</string>
+    <string name="guardar">Guardar</string>
+    <string-array name="pais_array">
+        <item>Perú</item>
+        <item>Colombia</item>
+        <item>Chile</item>
+    </string-array>
 </resources>

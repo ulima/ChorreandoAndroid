@@ -64,7 +64,7 @@ public class MainActivity extends Activity implements OnClickListener, LoginView
         // Ir a un nuevo activity Perfil
         Intent intent = new Intent();
         intent.setClass(MainActivity.this,
-                PerfilActivity.class);
+                ContenedorActivity.class);
         intent.putExtra("username", eteUsername.getText().toString());
         startActivity(intent);
     }
