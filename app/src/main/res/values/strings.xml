@@ -6,8 +6,8 @@
     <string name="title_activity_perfil">Perfil</string>
     <string name="title_activity_que_haciendo">¿Qué haciendo?</string>
     <string name="title_activity_amigos">Amigos</string>
-    <string name="Pais">Peru</string>
-    <string name="Nombre">Persona 1</string>
+    <string name="Pais">País: </string>
+    <string name="Nombre">Nombre: </string>
     <string name="guardar">Guardar</string>
     <string-array name="pais_array">
         <item>Perú</item>

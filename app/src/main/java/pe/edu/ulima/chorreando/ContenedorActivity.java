@@ -40,7 +40,7 @@ public class ContenedorActivity extends AppCompatActivity {
 
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //toolbar.setNavigationIcon(R.mipmap.ic_menu);
+        toolbar.setNavigationIcon(R.mipmap.ic_menu);
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();

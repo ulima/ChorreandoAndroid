@@ -44,10 +44,12 @@ public class PerfilFragment extends Fragment {
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.title_activity_perfil);
 
-        tviUsername = (TextView) view.findViewById(R.id.tviUsername);
+        tviUsername = (TextView) view.findViewById(R.id.etUsername);
         spiPais = (Spinner) view.findViewById(R.id.spiPais);
 
-        tviUsername.setText("Nombre");
+        Bundle extras = getActivity().getIntent().getExtras();
+
+        tviUsername.setText(extras.getString("username"));
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
