@@ -7,6 +7,6 @@ import retrofit.http.Body;
 import retrofit.http.POST;
 
 public interface ChorreandoService {
-    @POST("/ChorreandoBackend/login")
+    @POST("/login")
     Call<GenericResponse> login(@Body LoginRequest request);
 }
