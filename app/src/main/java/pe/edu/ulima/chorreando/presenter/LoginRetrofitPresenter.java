@@ -15,7 +15,7 @@ import retrofit.Retrofit;
  * Created by hquintana on 18/09/15.
  */
 public class LoginRetrofitPresenter implements ILoginPresenter{
-    private static final String url = "http://192.168.0.14:8080";
+    private static final String url = "http://chorreando.herokuapp.com";
 
     private LoginView view;
 

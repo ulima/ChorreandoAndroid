@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menQueHaciendo"
+        android:title="@string/men_que_haciendo"
+        android:icon="@mipmap/quehaciendo"/>
+    <item
+        android:id="@+id/menPerfil"
+        android:title="@string/men_perfil"
+        android:icon="@mipmap/perfil"/>
+
+</menu>

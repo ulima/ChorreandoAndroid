@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="pe.edu.ulima.chorreando.ContenedorActivity">
+    <item
+        android:id="@+id/menFoto"
+        android:icon="@mipmap/perfil"
+        android:title="@string/men_foto"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menOtro"
+        android:icon="@mipmap/quehaciendo"
+        android:title="@string/men_foto"
+        app:showAsAction="collapseActionView"/>
+</menu>

@@ -5,4 +5,11 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_perfil">Perfil</string>
     <string name="title_activity_contenedor">ContenedorActivity</string>
+    <string name="men_que_haciendo">Qué Haciendo</string>
+    <string name="men_perfil">perfil</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment1">Que Haciendo Fragment</string>
+    <string name="hello_blank_fragment2">Perfil Fragment</string>
+    <string name="men_foto">Foto</string>
 </resources>
