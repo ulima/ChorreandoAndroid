@@ -11,4 +11,8 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo_progress">Mensaje</string>
+    <string name="mensaje_progress">Conectando...</string>
+    <string name="fragment_que_haciendo_titulo">¿Qué Haciendo?</string>
+    <string name="menu_que_haciendo_foto">Foto</string>
 </resources>

@@ -6,11 +6,14 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
+import pe.edu.ulima.chorreando.model.dao.Usuario;
+
 /**
  * Created by hquintana on 12/09/15.
  */
 public class ApplicationController extends Application{
     private RequestQueue mRequestQueue;
+    private Usuario mUsuario;
 
     @Override
     public void onCreate() {
@@ -29,5 +32,11 @@ public class ApplicationController extends Application{
         getRequestQueue().add(req);
     }
 
+    public Usuario getUsuario() {
+        return mUsuario;
+    }
 
+    public void setUsuario(Usuario usuario) {
+        this.mUsuario = usuario;
+    }
 }

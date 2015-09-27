@@ -11,8 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
-public class ContenedorActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+import pe.edu.ulima.chorreando.model.dao.Momento;
+
+public class ContenedorActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener, QueHaciendoFragment.QueHaciendoActions {
     NavigationView navigation;
     DrawerLayout dlaContenedor;
     Toolbar toolbar;
@@ -58,7 +62,8 @@ public class ContenedorActivity extends AppCompatActivity implements NavigationV
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menTomarFoto) {
+            
             return true;
         }
 
@@ -97,5 +102,15 @@ public class ContenedorActivity extends AppCompatActivity implements NavigationV
         }
 
         return false;
+    }
+
+    @Override
+    public void setTitle(String titulo) {
+        getSupportActionBar().setTitle(titulo);
+    }
+
+    @Override
+    public void onMomentoSelected(Momento momento) {
+        Toast.makeText(this, "Proximamente...", Toast.LENGTH_SHORT).show();
     }
 }
