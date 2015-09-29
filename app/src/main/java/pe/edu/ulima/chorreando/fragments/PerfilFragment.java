@@ -8,12 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import pe.edu.ulima.chorreando.R;
 
 public class PerfilFragment extends Fragment {
+    ImageView iviPerfil;
     TextView tviUsername;
     Spinner spiPais;
     Button butGuardar;
@@ -46,6 +50,10 @@ public class PerfilFragment extends Fragment {
 
         tviUsername = (TextView) view.findViewById(R.id.etUsername);
         spiPais = (Spinner) view.findViewById(R.id.spiPais);
+        iviPerfil = (ImageView) view.findViewById(R.id.iviPerfil);
+
+        //Picasso.with(getActivity()).load("https://avatars3.githubusercontent.com/u/4576991?v=3&s=400").into(iviPerfil);
+        Picasso.with(getActivity()).load("https://avatars3.githubusercontent.com/u/4576991?v=3&s=400").into(iviPerfil);
 
         Bundle extras = getActivity().getIntent().getExtras();
 

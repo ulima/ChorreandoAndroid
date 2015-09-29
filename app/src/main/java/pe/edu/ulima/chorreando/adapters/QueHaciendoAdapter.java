@@ -8,21 +8,26 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import pe.edu.ulima.chorreando.R;
 import pe.edu.ulima.chorreando.model.dao.Momento;
 
 /**
  * Created by evaldivieso on 15/09/2015.
  */
-public class QueHaciendoAdapter extends RecyclerView.Adapter<QueHaciendoAdapter.QueHaciendoViewHolder> implements View.OnClickListener {
+public class QueHaciendoAdapter extends RecyclerView.Adapter<QueHaciendoAdapter.QueHaciendoViewHolder> {
     private LayoutInflater inflater;
     private List<Momento> momentos;
+    Context context;
 
     public QueHaciendoAdapter(Context context) {
+        this.context = context;
         inflater = LayoutInflater.from(context);
-        momentos = new ArrayList<Momento>();
+        momentos = new ArrayList<>();
     }
 
     public void updateData(List<Momento> momentos) {
@@ -34,14 +39,14 @@ public class QueHaciendoAdapter extends RecyclerView.Adapter<QueHaciendoAdapter.
     @Override
     public QueHaciendoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.item_que_haciendo, parent, false);
-        QueHaciendoViewHolder holder = new QueHaciendoViewHolder(view);
-        return holder;
+        return new QueHaciendoViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(QueHaciendoViewHolder holder, int position) {
         Momento momento = this.momentos.get(position);
-        holder.tviUsuario.setText(momento.getUsuario());
+        Picasso.with(context).load(momento.getUrlImagen()).into(holder.iviQueHaciendo);
+        holder.tviUsuario.setText(momento.getUsuario().getNombre());
         holder.tviLugar.setText(momento.getLugar());
         holder.tviFecha.setText(momento.getFecha());
     }
@@ -49,11 +54,6 @@ public class QueHaciendoAdapter extends RecyclerView.Adapter<QueHaciendoAdapter.
     @Override
     public int getItemCount() {
         return this.momentos.size();
-    }
-
-    @Override
-    public void onClick(View view) {
-
     }
 
     class QueHaciendoViewHolder extends RecyclerView.ViewHolder {
@@ -64,7 +64,6 @@ public class QueHaciendoAdapter extends RecyclerView.Adapter<QueHaciendoAdapter.
 
         public QueHaciendoViewHolder(View itemView) {
             super(itemView);
-
             iviQueHaciendo = (ImageView) itemView.findViewById(R.id.iviQueHaciendo);
             tviUsuario = (TextView) itemView.findViewById(R.id.tviUsuario);
             tviLugar = (TextView) itemView.findViewById(R.id.tviLugar);
@@ -75,7 +74,8 @@ public class QueHaciendoAdapter extends RecyclerView.Adapter<QueHaciendoAdapter.
     class DataRequired {
         String iv_que_haciendo, tv_usuario, tv_lugar, tv_fecha;
 
-        public DataRequired(String tv_usuario, String tv_lugar, String tv_fecha) {
+        public DataRequired(String iv_que_haciendo, String tv_usuario, String tv_lugar, String tv_fecha) {
+            this.iv_que_haciendo = iv_que_haciendo;
             this.tv_usuario = tv_usuario;
             this.tv_lugar = tv_lugar;
             this.tv_fecha = tv_fecha;

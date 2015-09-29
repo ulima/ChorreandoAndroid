@@ -1,45 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/activity_vertical_margin">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    card_view:cardCornerRadius="4dp">
 
-    <ImageView
-        android:id="@+id/iviQueHaciendo"
-        android:layout_width="350dp"
-        android:layout_height="250dp"
-        android:background="#C9C977"
-        android:layout_centerHorizontal="true"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/cardview_default_elevation">
 
-    <TextView
-        android:id="@+id/tviUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Usuario"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@id/iviQueHaciendo"
-        android:layout_alignStart="@id/iviQueHaciendo" />
+        <ImageView
+            android:id="@+id/iviQueHaciendo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="#C9C977"
+            android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/tviLugar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lugar"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:layout_alignBottom="@+id/iviQueHaciendo"
-        android:layout_alignLeft="@+id/iviQueHaciendo"
-        android:layout_alignStart="@+id/iviQueHaciendo" />
+        <TextView
+            android:id="@+id/tviUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/iviQueHaciendo"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@id/iviQueHaciendo"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="Usuario"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tviFecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:layout_alignBottom="@+id/iviQueHaciendo"
-        android:layout_alignRight="@+id/iviQueHaciendo"
-        android:layout_alignEnd="@+id/iviQueHaciendo" />
+        <TextView
+            android:id="@+id/tviLugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iviQueHaciendo"
+            android:layout_alignLeft="@+id/iviQueHaciendo"
+            android:layout_alignStart="@+id/iviQueHaciendo"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="Lugar"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tviFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iviQueHaciendo"
+            android:layout_alignEnd="@+id/iviQueHaciendo"
+            android:layout_alignRight="@+id/iviQueHaciendo"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="Fecha"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

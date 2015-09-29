@@ -10,12 +10,12 @@ public class Momento {
     private String urlImagen;
     private int latitud;
     private int longitud;
-    private String usuario;
+    private Usuario usuario;
 
     public Momento() {
     }
 
-    public Momento(Long idMomento, String lugar, String fecha, String urlImagen, int latitud, int longitud, String usuario) {
+    public Momento(Long idMomento, String lugar, String fecha, String urlImagen, int latitud, int longitud, Usuario usuario) {
         this.idMomento = idMomento;
         this.lugar = lugar;
         this.fecha = fecha;
@@ -73,11 +73,11 @@ public class Momento {
         this.longitud = longitud;
     }
 
-    public String getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 }
