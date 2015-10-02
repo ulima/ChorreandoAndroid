@@ -15,13 +15,14 @@ public class Momento {
     public Momento() {
     }
 
-    public Momento(Long idMomento, String lugar, String fecha, String urlImagen, int latitud, int longitud) {
+    public Momento(Long idMomento, String lugar, String fecha, String urlImagen, int latitud, int longitud, Usuario usuario) {
         this.idMomento = idMomento;
         this.lugar = lugar;
         this.fecha = fecha;
         this.urlImagen = urlImagen;
         this.latitud = latitud;
         this.longitud = longitud;
+        this.usuario = usuario;
     }
 
     public Long getIdMomento() {

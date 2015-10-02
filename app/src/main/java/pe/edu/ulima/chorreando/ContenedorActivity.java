@@ -2,7 +2,11 @@ package pe.edu.ulima.chorreando;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,13 +17,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import pe.edu.ulima.chorreando.model.dao.Momento;
 
 public class ContenedorActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, QueHaciendoFragment.QueHaciendoActions {
+    public static final int REQUEST_IMAGE_CAPTURE = 1;
+    public static final String IMAGE_CAPTURE_PATH = "IMAGE_CAPTURE_PATH";
+    public static final String IMAGE_CAPTURE_THUMBNAIL = "IMAGE_CAPTURE_THUMBNAIL";
+
     NavigationView navigation;
     DrawerLayout dlaContenedor;
     Toolbar toolbar;
+
+    private String mCurrentPhotoPath = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +78,36 @@ public class ContenedorActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.menTomarFoto) {
-            
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                File photoFile = null;
+                try {
+                    photoFile = createImageFile();
+                } catch (IOException ex) {
+                    throw new RuntimeException("Error tomando foto");
+                }
+                // Continue only if the File was successfully created
+                if (photoFile != null) {
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+                            Uri.fromFile(photoFile));
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
+            }
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            //Bundle extras = data.getExtras();
+            Intent intent = new Intent(this, FotoActivity.class);
+            intent.putExtra(IMAGE_CAPTURE_PATH, mCurrentPhotoPath);
+            //intent.putExtra(IMAGE_CAPTURE_THUMBNAIL, (Bitmap) extras.get("data"));
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -113,4 +153,23 @@ public class ContenedorActivity extends AppCompatActivity
     public void onMomentoSelected(Momento momento) {
         Toast.makeText(this, "Proximamente...", Toast.LENGTH_SHORT).show();
     }
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        //mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+        mCurrentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
 }

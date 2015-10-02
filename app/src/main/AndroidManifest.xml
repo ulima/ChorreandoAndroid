@@ -3,6 +3,9 @@
     package="pe.edu.ulima.chorreando" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".ApplicationController"
@@ -26,6 +29,10 @@
         <activity
             android:name=".ContenedorActivity"
             android:label="@string/title_activity_contenedor" >
+        </activity>
+        <activity
+            android:name=".FotoActivity"
+            android:label="@string/title_activity_foto" >
         </activity>
     </application>
 

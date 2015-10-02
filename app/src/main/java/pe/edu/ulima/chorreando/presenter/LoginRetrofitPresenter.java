@@ -37,7 +37,7 @@ public class LoginRetrofitPresenter implements ILoginPresenter{
 
         service.login(loginRequest).enqueue(new Callback<GenericResponse>() {
             @Override
-            public void onResponse(Response<GenericResponse> response) {
+            public void onResponse(Response<GenericResponse> response, Retrofit retrofit) {
                 if (response.body().getMsgStatus().equals("OK")) {
                     view.onLoginCorrecto();
                 } else if (response.body().getMsgStatus().equals("ERROR")) {

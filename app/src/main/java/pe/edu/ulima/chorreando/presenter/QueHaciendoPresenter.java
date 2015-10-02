@@ -31,7 +31,7 @@ public class QueHaciendoPresenter implements IQueHaciendoPresenter{
 
         service.obtenerMomentos(idUsuario).enqueue(new Callback<ObtenerMomentosResponse>() {
             @Override
-            public void onResponse(Response<ObtenerMomentosResponse> response) {
+            public void onResponse(Response<ObtenerMomentosResponse> response, Retrofit retrofit) {
                 if (response.body().getMsgStatus().equals("OK")) {
                     mView.onListaMomentosLoaded(response.body().getMomentos());
                 } else{
@@ -41,7 +41,7 @@ public class QueHaciendoPresenter implements IQueHaciendoPresenter{
 
             @Override
             public void onFailure(Throwable t) {
-                mView.onError("LoginPresenter (5XX): " + t.getMessage());
+                mView.onError("QueHaciendoPresenter (5XX): " + t.getMessage());
             }
         });
     }

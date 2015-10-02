@@ -15,4 +15,7 @@
     <string name="mensaje_progress">Conectando...</string>
     <string name="fragment_que_haciendo_titulo">¿Qué Haciendo?</string>
     <string name="menu_que_haciendo_foto">Foto</string>
+    <string name="title_activity_foto">FotoActivity</string>
+    <string name="men_foto_enviar">Enviar</string>
+    <string name="hint_foto_lugar">Ingrese el lugar</string>
 </resources>

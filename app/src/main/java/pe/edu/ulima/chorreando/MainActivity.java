@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import pe.edu.ulima.chorreando.model.dao.Usuario;
 import pe.edu.ulima.chorreando.presenter.LoginRetrofitPresenter;
 import pe.edu.ulima.chorreando.views.LoginView;
 
@@ -62,6 +63,12 @@ public class MainActivity extends Activity implements OnClickListener, LoginView
     @Override
     public void onLoginCorrecto() {
         // Ir a un nuevo activity Perfil
+        getApplicationController().setUsuario(new Usuario(
+                1l,
+                "Hernan",
+                "Peru",
+                "http://www.trendfollowing.com/images/V%20for%20Vendetta-751826.jpg"
+        ));
         Intent intent = new Intent();
         intent.setClass(MainActivity.this,
                 ContenedorActivity.class);
